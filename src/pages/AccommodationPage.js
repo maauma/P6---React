@@ -22,39 +22,60 @@ const AccommodationPage = () => {
   }
 
   return (
-    <div>
-      <h1>{accommodation.title}</h1>
-      <Carousel images={accommodation.pictures} />
+    
+    
+    <div className='logement accommodation-page'>
 
-      <Collapse title="Description">
-        <p>{accommodation.description}</p>
-      </Collapse>
-
-      <div>
-        <img src={accommodation.host.picture} alt={accommodation.host.name} />
-        <p>{accommodation.host.name}</p>
+      <div className='carrousel'>
+        <Carousel images={accommodation.pictures} />
       </div>
+      
+      <div className='bloc-infos'>
+      <div className='description1'>
+        <div className='bloc1'>
 
-      <p>{accommodation.location}</p>
+          <h1>{accommodation.title}</h1>
+          <p className='location'>{accommodation.location}</p>
+      
+          <ul className="tag-list">
+          {accommodation.tags.map((tag, index) => (
+          <li key={index}>{tag}</li>
+          ))}
+</ul>
 
-      <Collapse title={"Equipements"}>
-        
+        </div>
+
+        <div className='bloc2'>
+            <div className='hote'>
+            <p>{accommodation.host.name}</p>
+                <img src={accommodation.host.picture} alt={accommodation.host.name} />
+            </div>
+
+            {/* Etoiles de notation */}
+            <Rating rating={accommodation.rating} /> {/* Add the rating here */}
+        </div>
+        </div>
+      </div>
+        <div className='bloc3'>
+<Collapse className="accommodation-accordeon" title="Description">
+  <div className='open_collapse'>
+    <p>{accommodation.description}</p>
+  </div>
+</Collapse>
+
+  <Collapse className="accommodation-accordeon" title={"Equipements"}>
+    <div className='open_collapse'>
       <ul>
         {accommodation.equipments.map((equipment, index) => (
           <li key={index}>{equipment}</li>
         ))}
       </ul>
-      </Collapse>
+    </div>
+  </Collapse>
+</div>
 
-      <ul>
-        {accommodation.tags.map((tag, index) => (
-          <li key={index}>{tag}</li>
-        ))}
-      </ul>
 
-      <Rating rating={accommodation.rating} /> {/* Add the rating here */}
-
-      {/* Ajoutez ici d'autres informations sur le logement */}
+      {/* Ajouter ici d'autres informations sur le logement */}
     </div>
   );
 };

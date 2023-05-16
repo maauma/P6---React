@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/style.css';  // Assurez-vous d'avoir ce fichier CSS dans le même dossier
+import '../css/style.css';  
 
 const Rating = ({ rating }) => {
   const stars = [];
@@ -7,7 +7,7 @@ const Rating = ({ rating }) => {
     if (i < rating) {
       stars.push(<span className="star-filled" key={i}>★</span>); // star filled
     } else {
-      stars.push(<span className="star-empty" key={i}>☆</span>); // star not filled
+      stars.push(<span className="star-filled-grey" key={i}>★</span>); // star not filled
     }
   }
 

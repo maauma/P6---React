@@ -1,13 +1,15 @@
 function Banner({ title, image }) {
-    return (
-      <div className="banner">
-        <img src={image} alt={"oups"} />
-        <h1 className="banner-title">{title}</h1>
+  const bannerStyle = {
+      backgroundImage: `url(${image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+  };
+
+  return (
+      <div className="banner" style={bannerStyle}>
+          <h1 className="banner-title">{title}</h1>
       </div>
-    );
-  }
-  
+  );
+}
 
-  export default Banner;
-
-  
+export default Banner;

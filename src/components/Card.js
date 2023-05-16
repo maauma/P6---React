@@ -12,7 +12,6 @@ function Card({ property }) {
           {/* Ajoutez une balise img pour afficher l'image */}
           <img src={imageUrl} alt={property.title} />
           <h2 className="card-title">{property.title}</h2>
-          {/* Vous pouvez ajouter plus d'informations ici, comme l'emplacement, la description, etc. */}
         </div>
       </Link>
     </div>

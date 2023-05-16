@@ -22,11 +22,11 @@ const Slideshow = ({ images }) => {
     <div className="slideshow">
       {images.length > 1 && (
         <>
-          <button onClick={previousSlide}>Précédent</button>
-          <button onClick={nextSlide}>Suivant</button>
+          <button className="slideshow-button slideshow-button-previous" onClick={previousSlide}>&lt;</button>
+          <button className="slideshow-button slideshow-button-next" onClick={nextSlide}>&gt;</button>
         </>
       )}
-      <img src={images[currentImageIndex]} alt="" />
+      <img className="slideshow-image" src={images[currentImageIndex]} alt="" />
     </div>
   );
 };
